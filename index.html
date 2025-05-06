@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luz, câmera, crítica</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    /* Logo */
+    .logo1 {
+      height: 70px;
+      width: auto;
+      margin-right: 15px;
+    }
+
+    /* Barra de Navegação */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 8px 20px;
+      height: 50px;
+    }
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    /* Dropdown do Menu "Serviços" */
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-toggle {
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+    .seta {
+      margin-left: 5px;
+      font-size: 14px;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown:hover .dropdown-content,
+    .dropdown-toggle:focus + .dropdown-content {
+      display: block;
+    }
+
+    /* Search-bar */
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Carrossel */
+    .recommendations {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .movies-container {
+      display: flex;
+      overflow-x: scroll;
+      gap: 20px;
+      scroll-behavior: smooth;
+    }
+    .movie {
+      flex: 0 0 auto;
+      width: 200px;
+      padding: 10px;
+      background: #f8f8f8;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+    .movie img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .carousel-nav {
+      margin-top: 10px;
+    }
+    .carousel-nav button {
+      cursor: pointer;
+      padding: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de Navegação -->
+  <nav>
+    <div class="nav-left">
+      <img src="./img/logo.png" alt="Luz, Câmera, Crítica" class="logo1">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <div class="dropdown">
+        <button class="dropdown-toggle">Serviços <span class="seta">▼</span></button>
+        <div class="dropdown-content">
+          <a href="./serviços/consultoria.html">Consultoria</a>
+          <a href="./serviços/producao.html">Produção</a>
+          <a href="./serviços/distribuicao.html">Distribuição</a>
+        </div>
+      </div>
+      <a href="contato.html">Contato</a>
+    </div>
+    <div class="nav-right">
+      <div class="search-bar">
+        <select class="search-select" id="search-category">
+          <option value="filmes">Filmes</option>
+          <option value="series">Séries</option>
+          <option value="desenhos">Desenhos</option>
+          <option value="novelas">Novelas</option>
+        </select>
+        <input type="text" class="search-input" id="search-input" placeholder="Pesquisar..." />
+        <button class="search-button" onclick="searchFilme()">Buscar</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="header">
+    <span class="pipoca">🍿</span>
+    <h1>Luz, câmera, crítica - Cultura cinematográfica brasileira</h1>
+  </div>
+
+
+  <!-- Carrossel de Produções -->
+  <div class="recommendations">
+    <div class="movies-container" id="carousel">
+      <div class="movie">
+        <img src="./img/cidade-de-Deus-capa.jpg" alt="Cidade De Deus">
+        <h3>Cidade De Deus</h3>
+        <p>Documentário, suspense, crime e drama</p>
+        <button class="view-button" onclick="window.location.href='inform2.html?id=2'">Ver mais</button>
+      </div>
+      <div class="movie">
+        <img src="./img/o-auto-da-compadecida.png" alt="O Auto da Compadecida">
+        <h3>O Auto da Compadecida</h3>
+        <p>Comédia, drama, aventura.</p>
+        <button class="view-button" onclick="window.location.href='inform3.html?id=3'">Ver mais</button>
+      </div>
+      <div class="movie">
+        <img src="./img/tropa-de-elite.png" alt="Tropa de Elite">
+        <h3>Tropa de Elite</h3>
+        <p>Drama, ação, ficção policial.</p>
+        <button class="view-button" onclick="window.location.href='inform4.html?id=4'">Ver mais</button>
+      </div>
+      <div class="movie">
+        <img src="./img/cangaco-novocapa.png" alt="Cangaço Novo">
+        <h3>Cangaço Novo (2023)</h3>
+        <p>Ação, drama, suspense.</p>
+        <button class="view-button" onclick="window.location.href='inform5.html?id=5'">Ver mais</button>
+      </div>
+      <div class="movie">
+        <img src="./img/Meu-Amigaozao.png" alt="Meu AmigãoZão">
+        <h3>Meu AmigãoZão (2009)</h3>
+        <p>Animação, infantil.</p>
+        <button class="view-button" onclick="window.location.href='inform6.html?id=6'">Ver mais</button>
+      </div>
+      <div class="movie">
+        <img src="./img/contra-filecapa.jpeg" alt="Contra-Filé">
+        <h3>Contra-Filé (2019)</h3>
+        <p>Drama, independente.</p>
+        <button class="view-button" onclick="window.location.href='inform7.html?id=7'">Ver mais</button>
+      </div>
+    </div>
+    <div class="carousel-nav">
+      <button class="prev" onclick="moveCarousel(-1)">❮</button>
+      <button class="next" onclick="moveCarousel(1)">❯</button>
+    </div>
+  </div>
+
+  <!-- JavaScript para Carrossel com scrollBy (manual e automático) -->
+  <script>
+    const scrollAmount = 220; // Pixels a serem rolados por movimento
+    let slideInterval = setInterval(autoSlide, 3000);
+
+    function autoSlide() {
+      const container = document.getElementById("carousel");
+      // Se estiver quase no fim, volta para o início
+      if (container.scrollLeft + container.offsetWidth >= container.scrollWidth - 10) {
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+
+    function moveCarousel(direction) {
+      const container = document.getElementById("carousel");
+      container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+      clearInterval(slideInterval);
+      // Reinicia a rotação automática após 3 segundos
+      setTimeout(() => {
+        slideInterval = setInterval(autoSlide, 3000);
+      }, 3000);
+    }
+
+    // Função dummy para a busca
+    function searchFilme() {
+      let query = document.getElementById("search-input").value;
+      alert("Você pesquisou por: " + query);
+    }
+  </script>
+
+    <!-- Seção de Filmes Populares -->
+    <div class="popular-movies">
+      <h2>🎬 Filmes Mais Populares</h2>
+      <div class="popular-container">
+        <div class="popular-movie">
+          <img src="./img/cidade-de-Deus-capa.jpg" alt="Cidade de Deus">
+          <h3>Cidade de Deus</h3>
+          <p>Suspense, Crime, Drama</p>
+          <button class="view-button" onclick="window.location.href='inform2.html?id=2'">Ver mais</button>
+        </div>
+        <div class="popular-movie">
+          <img src="./img/o-auto-da-compadecida.png" alt="O Auto da Compadecida">
+          <h3>O Auto da Compadecida</h3>
+          <p>Comédia, Drama, Aventura</p>
+          <button class="view-button" onclick="window.location.href='inform3.html?id=3'">Ver mais</button>
+        </div>
+        <div class="popular-movie">
+          <img src="./img/tropa-de-elite.png" alt="Tropa de Elite">
+          <h3>Tropa de Elite</h3>
+          <p>Ação, Drama, Ficção Policial</p>
+          <button class="view-button" onclick="window.location.href='inform4.html?id=4'">Ver mais</button>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distribuição - Luz, Câmera, Crítica</title>
+  <link rel="stylesheet" href="../css/servicos/distribuicao.css">
+  <style>
+    /* Estilização da barra de navegação */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 8px 20px;
+      height: 50px;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* Ajuste da logo */
+    .logo1 {
+      height: 50px;
+      width: auto;
+    }
+
+    /* Estilo dos links */
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    /* Menu dropdown */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-toggle {
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Estilização da seta */
+    .seta {
+      font-size: 14px;
+      margin-left: 5px;
+    }
+
+    /* Estilo do menu flutuante */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Exibe o menu ao toque ou passar o mouse */
+    .dropdown-toggle:focus + .dropdown-content,
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Responsividade para mobile */
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .nav-left, .nav-right {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .logo1 {
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <img src="./img/logo.png" alt="Luz, Câmera, Crítica" class="logo1">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <div class="dropdown">
+        <button class="dropdown-toggle">Serviços <span class="seta">▼</span></button>
+        <div class="dropdown-content">
+          <a href="./serviços/consultoria.html">Consultoria</a>
+          <a href="./serviços/producao.html">Produção</a>
+          <a href="./serviços/distribuicao.html">Distribuição</a>
+        </div>
+      </div>
+      <a href="contato.html">Contato</a>
+    </div>
+
+    <div class="nav-right">
+      <div class="search-bar">
+        <select class="search-select" id="search-category">
+          <option value="filmes">Filmes</option>
+          <option value="series">Séries</option>
+          <option value="desenhos">Desenhos</option>
+          <option value="novelas">Novelas</option>
+        </select>
+        <input type="text" class="search-input" id="search-input" placeholder="Pesquisar..." />
+        <button class="search-button">Buscar</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="header">
+    <span class="pipoca">🍿</span>
+    <h1>Luz, câmera, crítica - Cultura cinematográfica brasileira</h1>
+  </div>
+
+  <div class="container">
+    <h1>Distribuição</h1>
+    <p>A distribuição cinematográfica é essencial para que filmes alcancem seu público. No Brasil, algumas das principais distribuidoras são:</p>
+
+    <div class="empresas">
+      <div class="empresa">
+        <img src="../img/fox.png" alt="Fox Film do Brasil">
+        <h3>Fox Film do Brasil</h3>
+        <p>Uma das maiores distribuidoras do país, com sede em São Paulo.</p>
+      </div>
+
+      <div class="empresa">
+        <img src="../img/downtown.png" alt="Downtown Filmes">
+        <h3>Downtown Filmes</h3>
+        <p>Especializada em filmes nacionais, baseada no Rio de Janeiro.</p>
+      </div>
+
+      <div class="empresa">
+        <img src="../img/paris.png" alt="Paris Filmes">
+        <h3>Paris Filmes</h3>
+        <p>Responsável por grandes lançamentos internacionais e nacionais.</p>
+      </div>
+
+      <div class="empresa">
+        <img src="../img/diamond.png" alt="Diamond Films">
+        <h3>Diamond Films</h3>
+        <p>Distribui filmes de Hollywood e grandes produções estrangeiras.</p>
+      </div>
+    </div>
+
+    <a href="../index.html" class="btn">Voltar ao Início</a>
+  </div>
+</body>
+</html>
